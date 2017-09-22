@@ -1,0 +1,25 @@
+{ 
+  //预设一些插件, 将ES6转为es5都是依靠了一堆插件
+  "presets": [
+    //其中就有babel-presets-env插件,可以看到该插件下的package.json下有用到了各种各样的依赖, 比如把class转为ES5的, 把箭头函数转为ES5的
+    ["env", {
+      //配置模块风格, cmd, amd false: false的意思为es6转为es5的时候不设置任何模块风格,
+      "modules": false,
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+      }
+    }],
+    //草案阶段  0 0~3  2~3  数字越小依赖越大
+    "stage-2"
+  ],
+  //把es6的一些方法转为ES5的, 比如 Object.from
+  "plugins": ["transform-runtime"],
+
+  "env": {
+    //在测试下使用
+    "test": {
+      "presets": ["env", "stage-2"],
+      "plugins": ["istanbul"]
+    }
+  }
+}
