@@ -72,6 +72,7 @@ exports.cssLoaders = function (options) {
 }
 
 // Generate loaders for standalone style files (outside of .vue)
+// 还是对css的一个操作
 exports.styleLoaders = function (options) {
   var output = []
   var loaders = exports.cssLoaders(options)

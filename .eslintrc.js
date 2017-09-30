@@ -28,6 +28,10 @@ module.exports = {
     //开发环境允许debugger, 生产环境不允许debugger
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     //自定义规则: 忽略检查尾部;是否添加
-    'semi':0
+    'semi': 0,
+    //关闭禁止混用tab和空格
+    "no-mixed-spaces-and-tabs": [0],
+    "indent": 0,
+    "no-tabs": 0
   }
 }
